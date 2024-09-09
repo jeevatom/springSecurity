@@ -38,7 +38,8 @@
             })
             .then(response => {
                 if (response.ok) {
-                    window.location.href = 'welcome.html';
+                    // Redirect with username as URL parameter
+                    window.location.href = `welcome.html?user=${encodeURIComponent(userName)}`;
                 } else {
                     document.getElementById('errorMessage').innerText = 'Invalid credentials';
                 }
