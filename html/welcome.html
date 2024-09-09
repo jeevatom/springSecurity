@@ -13,16 +13,30 @@
 </head>
 <body>
     <div class="container">
-        <h2>Welcome!</h2>
+        <h2 id="welcomeMessage">Welcome!</h2>
         <p>You are now logged in.</p>
         <button onclick="logout()">Logout</button>
     </div>
     <script>
+        function getQueryParam(param) {
+            const urlParams = new URLSearchParams(window.location.search);
+            return urlParams.get(param);
+        }
+
+        function displayWelcomeMessage() {
+            const userName = getQueryParam('user');
+            if (userName) {
+                document.getElementById('welcomeMessage').textContent = `Welcome ${userName}`;
+            }
+        }
+
         function logout() {
             // For simplicity, just redirect to the login page
-            // In a real application, you might want to clear tokens or session data
             window.location.href = 'login.html';
         }
+
+        // Call the function to display the welcome message
+        displayWelcomeMessage();
     </script>
 </body>
 </html>
