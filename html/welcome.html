@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome</title>
+    <style>
+        body { font-family: Arial, sans-serif; display: flex; justify-content: center; align-items: center; height: 100vh; margin: 0; background-color: #f0f0f0; }
+        .container { width: 300px; padding: 20px; background: #fff; border-radius: 5px; box-shadow: 0 0 10px rgba(0,0,0,0.1); text-align: center; }
+        button { padding: 10px; background: #007bff; border: none; color: #fff; border-radius: 5px; cursor: pointer; }
+        button:hover { background: #0056b3; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Welcome!</h2>
+        <p>You are now logged in.</p>
+        <button onclick="logout()">Logout</button>
+    </div>
+    <script>
+        function logout() {
+            // For simplicity, just redirect to the login page
+            // In a real application, you might want to clear tokens or session data
+            window.location.href = 'login.html';
+        }
+    </script>
+</body>
+</html>
