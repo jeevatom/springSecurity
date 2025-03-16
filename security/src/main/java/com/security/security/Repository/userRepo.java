@@ -1,4 +1,4 @@
-package com.security.security.repository;
+package com.security.security.Repository;
 
 
 import com.security.security.Models.User;
@@ -7,5 +7,5 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public interface userRepo extends JpaRepository<User,Integer> {
-    User findByUserName(String username);
+    User findByUsername(String username);
 }

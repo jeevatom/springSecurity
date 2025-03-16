@@ -2,7 +2,7 @@ package com.security.security.Services;
 
 import com.security.security.Models.User;
 import com.security.security.Models.UserPrincipal;
-import com.security.security.repository.userRepo;
+import com.security.security.Repository.userRepo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
@@ -15,8 +15,8 @@ public class MyUserdetailsService implements UserDetailsService {
     @Autowired
     private userRepo repo;
     @Override
-    public UserDetails loadUserByUsername(String userName) throws UsernameNotFoundException {
-       User user=repo.findByUserName(userName);
+    public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
+       User user=repo.findByUsername(username);
 
        if(user==null){
            System.out.println("User not Found");
